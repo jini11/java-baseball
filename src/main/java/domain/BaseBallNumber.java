@@ -34,12 +34,12 @@ public class BaseBallNumber {
     }
 
     private boolean isDuplicate(List<Integer> computer) {
-        return computer.stream().distinct().count() == computer.size();
+        return computer.stream().distinct().count() != computer.size();
     }
 
     private boolean isInRange(List<Integer> computer) {
         return computer.stream()
                 .filter(number -> number >= 1 && number <= 9)
-                .count() == computer.size();
+                .count() != computer.size();
     }
 }
