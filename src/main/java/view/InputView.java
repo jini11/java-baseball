@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 public class InputView {
 
     public List<Integer> readUserNumber() {
+        System.out.print("숫자를 입력해주세요 : ");
         String input = Console.readLine();
         validate(input);
         return Arrays.stream(input.split(""))
