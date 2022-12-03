@@ -23,20 +23,20 @@ public class InputView {
             throw new IllegalArgumentException();
         }
         if (isInRange(userNumber)) {
-            throw  new IllegalArgumentException();
+            throw new IllegalArgumentException();
         }
     }
 
     private boolean isDuplicate(String number) {
         HashSet<Integer> notDuplicate = new HashSet<>(Arrays.stream(number.split("")).map(Integer::parseInt).collect(Collectors.toList()));
-        return notDuplicate.size() != number.length();
+        return notDuplicate.size() != 3;
     }
 
     private boolean isInRange(String number) {
         return Arrays.stream(number.split(""))
                 .map(Integer::parseInt)
                 .filter(one -> one >= 1 && one <= 9)
-                .count() != number.length();
+                .count() != 3;
     }
 
     public int readRetry() {
