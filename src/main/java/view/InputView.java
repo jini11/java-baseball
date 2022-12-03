@@ -19,12 +19,19 @@ public class InputView {
     }
 
     private void validate(String userNumber) {
+        if (isRightType(userNumber)) {
+            throw new IllegalArgumentException();
+        }
         if (isDuplicate(userNumber)) {
             throw new IllegalArgumentException();
         }
         if (isInRange(userNumber)) {
             throw new IllegalArgumentException();
         }
+    }
+
+    private boolean isRightType(String number) {
+        return !number.matches("^[1-9]*$");
     }
 
     private boolean isDuplicate(String number) {
