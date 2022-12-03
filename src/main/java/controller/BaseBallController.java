@@ -1,6 +1,7 @@
 package controller;
 
 import domain.BaseBallNumber;
+import domain.Result;
 import view.InputView;
 import view.OutputView;
 
@@ -10,11 +11,13 @@ public class BaseBallController {
     private InputView inputView;
     private OutputView outputView;
     private BaseBallNumber baseBallNumber;
+    private Result result;
 
     public BaseBallController() {
         inputView = new InputView();
         outputView = new OutputView();
         baseBallNumber = new BaseBallNumber();
+        result = new Result();
     }
 
     public void start() {
@@ -24,12 +27,12 @@ public class BaseBallController {
     }
 
     private void playGame() {
-        makeComputerNumber();
+        List<Integer> computer = makeComputerNumber();
         List<Integer> userNumber = inputView.readUserNumber();
-
+        result.countStrikesAndBalls(computer, userNumber);
     }
 
-    private void makeComputerNumber() {
-        List<Integer> computer = baseBallNumber.makeComputerNumber();
+    private List<Integer> makeComputerNumber() {
+        return baseBallNumber.makeComputerNumber();
     }
 }
