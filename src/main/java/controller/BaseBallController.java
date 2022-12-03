@@ -28,9 +28,12 @@ public class BaseBallController {
 
     private void playGame() {
         List<Integer> computer = makeComputerNumber();
-        List<Integer> userNumber = inputView.readUserNumber();
-        result.countStrikesAndBalls(computer, userNumber);
-        outputView.printResult(result.getBall(), result.getStrike());
+        do {
+            List<Integer> userNumber = inputView.readUserNumber();
+            result.countStrikesAndBalls(computer, userNumber);
+            outputView.printResult(result.getBall(), result.getStrike());
+        } while (!result.isCorrect());
+        outputView.printCorrect();
     }
 
     private List<Integer> makeComputerNumber() {

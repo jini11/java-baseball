@@ -16,6 +16,10 @@ public class Result {
         }
     }
 
+    public boolean isCorrect() {
+        return strike == 3;
+    }
+
     public int getBall() {
         return ball;
     }
