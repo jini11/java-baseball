@@ -6,6 +6,11 @@ public class Result {
     private int ball;
     private int strike;
 
+    public void init() {
+        ball = 0;
+        strike = 0;
+    }
+
     public void countStrikesAndBalls(List<Integer> computer, List<Integer> user) {
         for (int i = 0; i < computer.size(); i++) {
             if (computer.get(i) == user.get(i)) {
