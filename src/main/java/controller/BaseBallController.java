@@ -22,7 +22,6 @@ public class BaseBallController {
 
     public void start() {
         outputView.printStart();
-
         playGame();
     }
 
@@ -38,5 +37,10 @@ public class BaseBallController {
 
     private List<Integer> makeComputerNumber() {
         return baseBallNumber.makeComputerNumber();
+    }
+
+    private void isRetry() {
+        int retry = inputView.readRetry();
+
     }
 }

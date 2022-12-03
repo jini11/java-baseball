@@ -38,4 +38,17 @@ public class InputView {
                 .filter(one -> one >= 1 && one <= 9)
                 .count() == number.length();
     }
+
+    public int readRetry() {
+        System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+        int command = Integer.parseInt(Console.readLine());
+        validate(command);
+        return command;
+    }
+
+    private void validate(int command) {
+        if (command != 1 && command != 2) {
+            throw new IllegalArgumentException();
+        }
+    }
 }
